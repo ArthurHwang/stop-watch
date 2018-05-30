@@ -16,7 +16,6 @@ $startButton.addEventListener('click', (e) => {
     $startButton.style["color"] = "blue";
     $resetButton.innerHTML = 'RESET';
     $resetButton.style["background-color"] = "orange"
-
   } else if (seconds > 00) {
     clearInterval(interval);
     interval = undefined;
@@ -30,7 +29,9 @@ $startButton.addEventListener('click', (e) => {
 $resetButton.addEventListener('click', (e) => {
   if (seconds) {
     clearInterval(interval);
+    $elapsedTime.innerHTML = "00:00:00"
     seconds = 00;
+    interval = undefined;
   }
 })
 
