@@ -12,19 +12,21 @@ body {
 	text-align: center;
 }
 
-#elapsed-time {
+.container p {
 	font-weight: 700;
 	font-size: 100px;
-	padding-top: 15%;
+	padding-top: 13%;
+	height: 15px;
 }
 
 #button-start {
 	font-weight: 700;
 	text-align: center;
-	color: #faff00;
+	color: #0004ff;
 	background-color: #00ff19;
 	box-shadow: none;
 	border: none;
 	width: 60px;
 	height: 30px;	
+	padding-bottom: ;
 }
