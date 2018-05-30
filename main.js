@@ -8,27 +8,27 @@ let hours = 00;
 let interval;
 
 $startButton.addEventListener('click', (e) => {
-    if (interval === undefined) {
-        interval = setInterval(startTimer, 10);
-        $startButton.innerHTML = 'START'
-        $startButton.style["background-color"] = "#00ff19"
-        $startButton.style["color"] = "blue"
-    } else if (seconds > 00) {
-        clearInterval(interval);
-        interval = undefined;
-        $startButton.innerHTML = 'PAUSED'
-        $startButton.style["background-color"] = "red"
-        $startButton.style["color"] = "yellow"
-    }
+  if (interval === undefined) {
+    interval = setInterval(startTimer, 10);
+    $startButton.innerHTML = 'START'
+    $startButton.style["background-color"] = "#00ff19"
+    $startButton.style["color"] = "blue"
+  } else if (seconds > 00) {
+    clearInterval(interval);
+    interval = undefined;
+    $startButton.innerHTML = 'PAUSED'
+    $startButton.style["background-color"] = "red"
+    $startButton.style["color"] = "yellow"
+  }
 });
 
 function startTimer() {
-    seconds++;
-    $elapsedTime.innerHTML = "0" + hours + ":" + "0" + minutes + ":" + seconds;
+  seconds++;
+  $elapsedTime.innerHTML = "0" + hours + ":" + "0" + minutes + ":" + seconds;
 }
 
 function pauseTimer() {
-    if (interval) {
-        console.log('setInterval Running')
-    }
+  if (interval) {
+    console.log('setInterval Running')
+  }
 }

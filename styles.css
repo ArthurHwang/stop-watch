@@ -1,32 +1,31 @@
 * {
-	font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 body {
-	background-color: black;
-	color: white;
-	
+  background-color: black;
+  color: white;
 }
 
 .container {
-	text-align: center;
+  text-align: center;
 }
 
 .container p {
-	font-weight: 700;
-	font-size: 100px;
-	padding-top: 13%;
-	height: 15px;
+  font-weight: 700;
+  font-size: 100px;
+  padding-top: 13%;
+  height: 15px;
 }
 
 #button-start {
-	font-weight: 700;
-	text-align: center;
-	color: #0004ff;
-	background-color: #00ff19;
-	box-shadow: none;
-	border: none;
-	width: 60px;
-	height: 30px;	
-	border-radius: 20px;
+  font-weight: 700;
+  text-align: center;
+  color: #0004ff;
+  background-color: #00ff19;
+  box-shadow: none;
+  border: none;
+  width: 60px;
+  height: 30px;
+  border-radius: 20px;
 }
