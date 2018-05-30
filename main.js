@@ -1,5 +1,6 @@
-let $startButton = document.getElementById('button-start');
-let $elapsedTime = document.getElementById('elapsed-time');
+const $startButton = document.getElementById('button-start');
+const $elapsedTime = document.getElementById('elapsed-time');
+const $runningStatus = document.getElementById('status');
 
 let seconds = 00;
 let minutes = 00;
@@ -7,17 +8,19 @@ let hours = 00;
 let interval;
 
 $startButton.addEventListener('click', (e) => {
-    if (interval === undefined ) {
-        interval = setInterval(startTimer, 1000);        
-    } else if (seconds > 00) {    	
-      clearInterval(interval);
-      interval = undefined;                
+    if (interval === undefined) {
+        interval = setInterval(startTimer, 10);
+        $startButton.innerHTML = 'START'
+    } else if (seconds > 00) {
+        clearInterval(interval);
+        interval = undefined;
+        $startButton.innerHTML = 'PAUSED'
     }
 });
 
 function startTimer() {
     seconds++;
-    $elapsedTime.innerHTML = hours + ":" + minutes + ":" + seconds;
+    $elapsedTime.innerHTML = "0" + hours + ":" + "0" + minutes + ":" + seconds;
 }
 
 function pauseTimer() {
@@ -25,6 +28,3 @@ function pauseTimer() {
         console.log('setInterval Running')
     }
 }
-
-// interval = setInterval(startTimer);
-//       interval(startTimer, 1000);
