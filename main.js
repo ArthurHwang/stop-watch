@@ -32,6 +32,11 @@ $resetButton.addEventListener('click', (e) => {
     $elapsedTime.innerHTML = "00:00:00"
     seconds = 00;
     interval = undefined;
+    $startButton.innerHTML = 'START'
+    $startButton.style["background-color"] = "#00ff19"
+    $startButton.style["color"] = "blue";
+    $resetButton.style["background-color"] = "black";
+    $resetButton.style["color"] = "black"
   }
 })
 
