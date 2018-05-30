@@ -1,12 +1,17 @@
 let $startButton = document.getElementById('button-start');
 let $elapsedTime = document.getElementById('elapsed-time');
 
-$startButton.addEventListener('click', (e) => {
+let seconds = 00;
+let minutes = 00;
+let hours = 00;
 
-	startTimer()
+$startButton.addEventListener('click', (e) => {
+	let interval = setInterval(startTimer)
+	interval(startTimer, 1000)
 });
 
 function startTimer () {
-		$elapsedTime.innerHTML = '00:00:01';
+		seconds++
+		$elapsedTime.innerHTML = hours + ":" + minutes + ":" + seconds;
 }
 
