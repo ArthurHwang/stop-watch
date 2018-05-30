@@ -2,6 +2,10 @@
   font-family: 'Roboto', sans-serif;
 }
 
+button:focus {
+  outline: 0;
+}
+
 body {
   background-color: black;
   color: white;
@@ -19,8 +23,9 @@ body {
 }
 
 #button-start {
+  position: fixed;
+  left: 610px;
   font-weight: 700;
-  text-align: center;
   color: #0004ff;
   background-color: #00ff19;
   box-shadow: none;
@@ -28,4 +33,17 @@ body {
   width: 60px;
   height: 30px;
   border-radius: 20px;
+}
+
+#button-reset {
+  top: 420px;
+  left: 611px;
+  position: fixed;
+  background-color: black;
+  border: none;
+  color: white;
+  border-radius: 20px;
+  width: 60px;
+  height: 30px;
+  box-shadow: none;
 }
