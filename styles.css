@@ -1,10 +1,30 @@
-body {
-	background-color: black;
-	color: white;
+* {
 	font-family: 'Roboto', sans-serif;
 }
 
-#elapsed-time {
+body {
+	background-color: black;
+	color: white;
+	
+}
+
+.container {
 	text-align: center;
+}
+
+#elapsed-time {
+	font-weight: 700;
+	font-size: 100px;
 	padding-top: 15%;
+}
+
+#button-start {
+	font-weight: 700;
+	text-align: center;
+	color: #faff00;
+	background-color: #00ff19;
+	box-shadow: none;
+	border: none;
+	width: 60px;
+	height: 30px;	
 }
