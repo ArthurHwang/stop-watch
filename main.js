@@ -49,5 +49,8 @@ function startTimer() {
   } else if (seconds < limit) {
     seconds++
     $elapsedTime.innerHTML = "0" + hours + ":" + "0" + minutes + ":" + "0" + seconds;
+  } else if (seconds === limit) {
+    window.alert('TIMES UP DUDE')
+    clearInterval(interval);
   }
 }
