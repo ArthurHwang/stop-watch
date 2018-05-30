@@ -9,9 +9,8 @@ let hours = 00;
 let interval;
 
 $startButton.addEventListener('click', (e) => {
-
   if (interval === undefined) {
-    interval = setInterval(startTimer, 10);
+    interval = setInterval(startTimer, 5);
     let hiddenReset = document.createElement('button');
     $startButton.innerHTML = 'START'
     $startButton.style["background-color"] = "#00ff19"
