@@ -16,6 +16,9 @@ $startButton.addEventListener('click', (e) => {
     $startButton.innerHTML = 'START'
     $startButton.style["background-color"] = "#00ff19"
     $startButton.style["color"] = "blue";
+    hiddenReset.setAttribute("id", "button-reset")
+    hiddenReset.innerHTML = "RESET";
+    $resetButton.appendChild(hiddenReset);
   } else if (seconds > 00) {
     clearInterval(interval);
     interval = undefined;
