@@ -8,6 +8,7 @@ body {
 }
 
 .container {
+
   text-align: center;
 }
 
@@ -20,7 +21,6 @@ body {
 
 #button-start {
   font-weight: 700;
-  text-align: center;
   color: #0004ff;
   background-color: #00ff19;
   box-shadow: none;
@@ -28,4 +28,13 @@ body {
   width: 60px;
   height: 30px;
   border-radius: 20px;
+}
+
+#button-reset {
+  background-color: black;
+  border: none;
+  color: white;
+  border-radius: 20px;
+  width: 60px;
+  height: 30px;
 }

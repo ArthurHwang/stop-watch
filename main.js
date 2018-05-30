@@ -10,14 +10,13 @@ let interval;
 
 $startButton.addEventListener('click', (e) => {
   if (interval === undefined) {
-    interval = setInterval(startTimer, 5);
-    let hiddenReset = document.createElement('button');
+    interval = setInterval(startTimer, 10);
     $startButton.innerHTML = 'START'
     $startButton.style["background-color"] = "#00ff19"
     $startButton.style["color"] = "blue";
-    hiddenReset.setAttribute("id", "button-reset")
-    hiddenReset.innerHTML = "RESET";
-    $resetButton.appendChild(hiddenReset);
+    $resetButton.innerHTML = 'RESET';
+    $resetButton.style["background-color"] = "orange"
+
   } else if (seconds > 00) {
     clearInterval(interval);
     interval = undefined;
@@ -28,13 +27,14 @@ $startButton.addEventListener('click', (e) => {
   }
 });
 
+$resetButton.addEventListener('click', (e) => {
+  if (seconds) {
+    clearInterval(interval);
+    seconds = 00;
+  }
+})
+
 function startTimer() {
   seconds++;
   $elapsedTime.innerHTML = "0" + hours + ":" + "0" + minutes + ":" + seconds;
-}
-
-function pauseTimer() {
-  if (interval) {
-    console.log('setInterval Running')
-  }
 }
