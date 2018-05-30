@@ -11,10 +11,14 @@ $startButton.addEventListener('click', (e) => {
     if (interval === undefined) {
         interval = setInterval(startTimer, 10);
         $startButton.innerHTML = 'START'
+        $startButton.style["background-color"] = "#00ff19"
+        $startButton.style["color"] = "blue"
     } else if (seconds > 00) {
         clearInterval(interval);
         interval = undefined;
         $startButton.innerHTML = 'PAUSED'
+        $startButton.style["background-color"] = "red"
+        $startButton.style["color"] = "yellow"
     }
 });
 
