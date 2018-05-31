@@ -47,7 +47,6 @@ function pause() {
 
 function startTimer() {
   let limit = Number($inputLimit.value);
-  seconds++
   if (seconds >= 60) {
     seconds = 00;
     minutes++;
@@ -56,7 +55,13 @@ function startTimer() {
     minutes = 00;
     hours++
   }
+  if (limit === 0) {
+    seconds++
+  } else if (seconds < limit) {
+    seconds++
+  } else if (seconds === limit) {
+    window.alert('TIMES UP DUDE')
+    clearInterval(interval);
+  }
   $elapsedTime.innerHTML = "0" + hours + ":" + "0" + minutes + ":" + seconds;
 }
-
-
