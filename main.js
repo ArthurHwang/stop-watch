@@ -17,13 +17,8 @@ $startButton.addEventListener('click', (e) => {
     $startButton.style["color"] = "blue";
     $resetButton.innerHTML = 'RESET';
     $resetButton.style["background-color"] = "orange"
-  } else if (seconds > 00) {
-    clearInterval(interval);
-    interval = undefined;
-    let hiddenReset = document.createElement('button');
-    $startButton.innerHTML = 'PAUSED'
-    $startButton.style["background-color"] = "red"
-    $startButton.style["color"] = "yellow";
+  } else {
+    pause();
   }
 });
 
@@ -39,18 +34,29 @@ $resetButton.addEventListener('click', (e) => {
     $resetButton.style["background-color"] = "black";
     $resetButton.style["color"] = "black"
   }
-})
+});
+
+function pause() {
+  clearInterval(interval);
+  interval = undefined;
+  let hiddenReset = document.createElement('button');
+  $startButton.innerHTML = 'PAUSED'
+  $startButton.style["background-color"] = "red"
+  $startButton.style["color"] = "yellow";
+}
 
 function startTimer() {
   let limit = Number($inputLimit.value);
-  if (limit === 0) {
-    seconds++
-    $elapsedTime.innerHTML = "0" + hours + ":" + "0" + minutes + ":" + seconds;
-  } else if (seconds < limit) {
-    seconds++
-    $elapsedTime.innerHTML = "0" + hours + ":" + "0" + minutes + ":" + "0" + seconds;
-  } else if (seconds === limit) {
-    window.alert('TIMES UP DUDE')
-    clearInterval(interval);
+  seconds++
+  if (seconds >= 60) {
+    seconds = 00;
+    minutes++;
   }
+  if (minutes >= 60) {
+    minutes = 00;
+    hours++
+  }
+  $elapsedTime.innerHTML = "0" + hours + ":" + "0" + minutes + ":" + seconds;
 }
+
+
