@@ -2,6 +2,7 @@ const $startButton = document.getElementById('button-start');
 const $elapsedTime = document.getElementById('elapsed-time');
 const $runningStatus = document.getElementById('status');
 const $resetButton = document.getElementById('button-reset');
+const $inputLimit = document.getElementById('user-limit');
 
 let seconds = 00;
 let minutes = 00;
@@ -10,7 +11,7 @@ let interval;
 
 $startButton.addEventListener('click', (e) => {
   if (interval === undefined) {
-    interval = setInterval(startTimer, 10);
+    interval = setInterval(startTimer, 1000);
     $startButton.innerHTML = 'START'
     $startButton.style["background-color"] = "#00ff19"
     $startButton.style["color"] = "blue";
@@ -41,6 +42,15 @@ $resetButton.addEventListener('click', (e) => {
 })
 
 function startTimer() {
-  seconds++;
-  $elapsedTime.innerHTML = "0" + hours + ":" + "0" + minutes + ":" + seconds;
+  let limit = Number($inputLimit.value);
+  if (limit === 0) {
+    seconds++
+    $elapsedTime.innerHTML = "0" + hours + ":" + "0" + minutes + ":" + seconds;
+  } else if (seconds < limit) {
+    seconds++
+    $elapsedTime.innerHTML = "0" + hours + ":" + "0" + minutes + ":" + "0" + seconds;
+  } else if (seconds === limit) {
+    window.alert('TIMES UP DUDE')
+    clearInterval(interval);
+  }
 }
